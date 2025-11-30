@@ -1,3 +1,4 @@
+<!-- CART.PHP-->
 <?php
 session_start();
 require_once 'includes/db.php';
@@ -37,6 +38,13 @@ if (count($_SESSION['cart']) > 0) {
     foreach ($_SESSION['cart'] as $item) {
         $quantities[$item['design_id']] = $item['quantity'];
     }
+}
+
+$pedidos = [];
+if (isset($_SESSION['user_id'])) {
+    $stmtPedidos = $pdo->prepare("SELECT id, fecha, total, estado FROM orders WHERE user_id = ? ORDER BY fecha DESC");
+    $stmtPedidos->execute([$_SESSION['user_id']]);
+    $pedidos = $stmtPedidos->fetchAll();
 }
 ?>
 

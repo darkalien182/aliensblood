@@ -7,3 +7,5 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     alert('Por favor, completa todos los campos.');
   }
 });
+
+//OJO

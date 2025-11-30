@@ -1,4 +1,4 @@
-/* Censura visual para imágenes NSFW */
+/* CENSORSHIP.CSS */
 
 .censored img {
   filter: blur(8px);

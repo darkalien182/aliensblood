@@ -1,4 +1,4 @@
-// Censura interactiva de imágenes NSFW
+// censorship.js
 
 document.addEventListener("DOMContentLoaded", function () {
   const nsfwWrappers = document.querySelectorAll(".image-wrapper[data-nsfw='1']");

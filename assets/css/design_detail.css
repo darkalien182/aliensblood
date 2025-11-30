@@ -1,153 +1,185 @@
+/* Fondo y tipografía general */
+body {
+    background-color: #0b0c10;
+    color: #e0e0e0;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-bottom: 2px solid #ff00ff;
+}
+
+header h1 {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #ff00ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+}
+
+/* Main */
 .design-detail {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #111;
-  color: #f0f0f0;
-  border-radius: 12px;
-  text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #141414;
+    border: 1px solid #ff00ff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff00ff33;
 }
 
-.design-detail h2 {
-  color: #00ffaa;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+/* Imagen */
+.image-wrapper {
+    position: relative;
+    margin: 20px 0;
+    border: 2px solid #ff00ff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.design-detail img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border: 2px solid #00ffaa;
-  box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+.image-wrapper img {
+    width: 100%;
+    display: block;
 }
 
-.design-description {
-  background-color: #1c1c1c;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  text-align: left;
-}
-
-.btn {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.btn-cart {
-  background-color: #00ffaa;
-  color: #000;
-}
-
-.btn-cart:hover {
-  background-color: #0ff;
-  transform: scale(1.05);
-}
-
+/* Interactions */
 .interactions {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: #1c1c1c;
-  border-radius: 12px;
+    margin-top: 30px;
+    overflow: visible !important;
 }
 
-.likes {
-  margin-bottom: 1.5rem;
-}
-
-#likeBtn {
-  background-color: #222;
-  color: #f0f0f0;
-  border: 1px solid #00ffaa;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-right: 0.5rem;
-}
-
-#likeBtn:hover {
-  background-color: #00ffaa;
-  color: #000;
-}
-
+/* Comentarios */
 .comments h3 {
-  color: #00ffaa;
-  margin-bottom: 1rem;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
 }
 
+/* Cada comentario */
 #commentList {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
+    overflow: visible !important;
 }
 
 #commentList li {
-  background-color: #222;
-  padding: 0.8rem;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
-  border-left: 3px solid #00ffaa;
+    background-color: #1f1f1f;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-left: 3px solid #00ffff;
+    border-radius: 6px;
+    position: relative;
+    color: #e0e0e0;
+
+    /* Fix crítico */
+    overflow: visible !important;
+    display: block !important;
 }
 
-#commentInput {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 0.8rem;
-  border-radius: 6px;
-  background-color: #222;
-  color: #f0f0f0;
-  border: 1px solid #444;
-  resize: vertical;
+/* Autor */
+#commentList li strong {
+    color: #00ffff;
+    text-shadow: 0 0 3px #00ffff;
 }
 
-#addComment {
-  background-color: #00ffaa;
-  color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Fecha */
+#commentList li small {
+    color: #aaa;
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 5px;
 }
 
-#addComment:hover {
-  background-color: #0ff;
-  transform: scale(1.05);
+/* -------- FIX ABSOLUTO ---------- */
+
+
+/* Botones */
+/* ================================
+   FIX DEFINITIVO MG + ELIMINAR
+   ================================ */
+
+#commentList li {
+    overflow: visible !important;
+    position: relative !important;
 }
 
-.adult-warning {
-  display: inline-block;
-  background: crimson;
-  color: white;
-  padding: 4px 8px;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  font-weight: bold;
-  margin-bottom: 1rem;
+#commentList li form {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    pointer-events: auto !important;
+    margin-right: 10px;
+    margin-top: 8px;
+    z-index: 99999 !important;
 }
 
-
-.image-wrapper.censored {
-  cursor: pointer;
-  pointer-events: auto;
+#commentList li form button {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+    z-index: 99999 !important;
 }
 
-.image-wrapper.censored img,
-.image-wrapper.censored .censor-overlay {
-  pointer-events: none;
+/* Textarea */
+textarea#commentInput {
+    width: 100%;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: 2px solid #ff00ff;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.image-wrapper.censored a {
-  pointer-events: none;
-  text-decoration: none;
+/* Botón general */
+button {
+    background-color: #ff00ff;
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00ffff;
+    color: #000;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+}
+
+/* Botón volver inicio */
+a[href="index.php"] {
+    background-color: #ff00ff;
+    color: #fff;
+    transition: 0.3s;
+}
+
+a[href="index.php"]:hover {
+    background-color: #00ffff;
+    color: #000;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
 }

@@ -1,61 +1,86 @@
+/* SHOP.CSS — Estilo Ciberpunk */
+
 .shop-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  color: #e0e0e0;
 }
 
+/* Caja de filtros con brillo */
 .filter-form {
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #222222;
+  background: rgba(20, 20, 20, 0.85);
   border-radius: 8px;
+  border: 1px solid #b700ff;
+  box-shadow: 0 0 12px #b700ff66;
 }
 
 .filter-form select {
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid #222222;
+  background-color: #111;
+  border: 1px solid #b700ff;
+  color: #e0e0e0;
   margin-left: 10px;
+  transition: 0.25s ease;
 }
 
+.filter-form select:hover {
+  box-shadow: 0 0 10px #8b00ff;
+}
+
+/* Grid */
 .designs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
+/* Tarjetas */
 .design-card {
-  border: 1px solid #383838;
+  border: 1px solid #8b00ff;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #222222; 
+  background: rgba(20, 20, 20, 0.85);
   position: relative;
+  box-shadow: 0 0 10px #8b00ff33;
 }
 
 .design-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 20px #b700ffaa, 0 0 40px #00e1ff55;
 }
 
+/* Imágenes */
 .image-wrapper {
   width: 100%;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222222;
+  background: #0c0c0c;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border-bottom: 1px solid #b700ff55;
 }
 
 .image-wrapper img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+  transition: 0.3s ease;
 }
 
+.image-wrapper:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px #b700ffaa);
+}
+
+/* Contenido censurado */
 .censored {
   filter: blur(12px);
 }
@@ -66,12 +91,9 @@
 
 .censor-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ff4ff7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,28 +102,33 @@
   font-size: 1rem;
   z-index: 2;
   pointer-events: none;
+  text-shadow: 0 0 8px #ff00ff, 0 0 12px #b700ff;
 }
 
+/* Títulos */
 .design-card h3 {
   padding: 15px;
   margin: 0;
   font-size: 1.1rem;
-  color: #ffffff; 
+  color: #e0e0e0;
+  text-shadow: 0 0 8px #b700ff88;
 }
 
+/* Banner +18 */
 .adult-warning {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #f44336;
-  color: rgb(255, 255, 255);
+  background: linear-gradient(45deg, #ff0033, #b700ff);
+  color: white;
   padding: 5px 10px;
   border-radius: 4px;
   font-weight: bold;
   font-size: 0.8rem;
+  box-shadow: 0 0 10px #ff0066aa;
 }
 
-/* Diseño acciones: contador y botones - vertical layout, contador horizontal */
+/* Acciones */
 .design-actions {
   display: flex;
   flex-direction: column;
@@ -110,16 +137,16 @@
   padding: 15px;
 }
 
+/* Contador */
 .quantity-counter {
-  display: flex; /* horizontal layout para botones e input */
+  display: flex;
   align-items: center;
   gap: 8px;
   width: auto;
-  margin-bottom: 0;
 }
 
 .quantity-counter button {
-  background-color: #b700ff;
+  background: #b700ff;
   border: none;
   color: white;
   font-weight: bold;
@@ -128,39 +155,37 @@
   height: 36px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.25s ease;
   user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 1;
-  padding: 0;
 }
 
 .quantity-counter button:hover {
-  background-color: #00c431;
+  background: #00d17a;
+  box-shadow: 0 0 12px #00d17aaa;
 }
 
 .quantity-counter input[type="number"] {
   width: 50px;
   height: 36px;
-  border: 1.5px solid #383838;
+  border: 1.5px solid #8b00ff;
   border-radius: 6px;
-  background-color: #222222;
-  color: white;
+  background: #111;
+  color: #e0e0e0;
   font-weight: bold;
   text-align: center;
   font-size: 1.1rem;
-  -moz-appearance: textfield; /* Firefox sin flechas */
 }
 
 /* Quitar flechas en Chrome/Edge */
-.quantity-counter input[type=number]::-webkit-inner-spin-button, 
-.quantity-counter input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+.quantity-counter input[type=number]::-webkit-inner-spin-button,
+.quantity-counter input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
+/* Botones */
 .action-buttons {
   display: flex;
   flex-direction: column;
@@ -175,31 +200,33 @@
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  text-decoration: none;
   display: inline-block;
   text-align: center;
-  transition: background-color 0.3s;
-  white-space: nowrap;
-  width: 100%; /* ancho completo para evitar cortes */
+  transition: 0.25s ease;
+  width: 100%;
   font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .btn-details {
-  background-color: #333;
+  background: #222;
   color: white;
+  border: 1px solid #8b00ff;
 }
 
 .btn-details:hover {
-  background-color: #b700ff;
+  background: #b700ff;
+  box-shadow: 0 0 12px #b700ffaa;
 }
 
 .btn-cart {
-  background-color: #b700ff;
+  background: #b700ff;
   color: white;
 }
 
 .btn-cart:hover {
-  background-color: #00c431;
+  background: #00d17a;
+  box-shadow: 0 0 15px #00d17aaa;
 }
 
 /* Responsive */
@@ -209,53 +236,54 @@
   }
 }
 
-/* Alertas, modales y demás estilos que ya tenías */
-
+/* Alertas */
 .alert-success {
-  background-color: #dff0d8;
-  color: #3c763d;
+  background: rgba(0, 255, 170, 0.15);
+  color: #00ffbf;
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 4px;
-  border: 1px solid #d6e9c6;
+  border: 1px solid #00ffbf88;
+  box-shadow: 0 0 12px #00ffbf55;
 }
 
+/* Modal de edad */
 .age-verification-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  inset: 0;
+  background: rgba(10, 0, 20, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  backdrop-filter: blur(4px);
 }
 
 .age-verification-content {
-  background-color: #222222;
+  background: #111;
   padding: 30px;
   border-radius: 10px;
   text-align: center;
   max-width: 500px;
   margin: 20px;
   border: 2px solid #b700ff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px #b700ffaa;
 }
 
 .age-verification-content h3 {
   color: #b700ff;
   margin-bottom: 20px;
   font-size: 1.5rem;
+  text-shadow: 0 0 10px #b700ffaa;
 }
 
 .age-verification-content p {
-  color: #ffffff;
+  color: #e0e0e0;
   margin-bottom: 25px;
   line-height: 1.5;
 }
 
+/* Botones del modal */
 .age-verification-buttons {
   display: flex;
   gap: 15px;
@@ -265,28 +293,30 @@
 
 .age-verification-buttons button {
   padding: 12px 20px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: 0.25s;
   min-width: 150px;
+  border: none;
 }
 
 .confirm-age {
-  background-color: #b700ff;
+  background: #b700ff;
   color: white;
 }
 
 .confirm-age:hover {
-  background-color: #9500d9;
+  background: #8b00ff;
+  box-shadow: 0 0 12px #b700ffaa;
 }
 
 .cancel-age {
-  background-color: #666;
+  background: #444;
   color: white;
 }
 
 .cancel-age:hover {
-  background-color: #555;
+  background: #666;
+  box-shadow: 0 0 10px #666;
 }
